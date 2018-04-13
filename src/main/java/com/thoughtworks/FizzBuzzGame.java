@@ -6,6 +6,9 @@ import java.util.List;
 
 public class FizzBuzzGame {
     private List<String> results = new ArrayList<>();
+    private int num1 = 3;
+    private int num2 = 5;
+    private int num3 = 7;
 
     public void start(int count) {
         for (int i = 1; i <= count; i++) {
@@ -24,17 +27,17 @@ public class FizzBuzzGame {
 
     private boolean containThree(int num) {
         if (num / 10 == 0)
-            return num == 3;
-        return num % 10 == 3 || containThree(num / 10);
+            return num == num1;
+        return num % 10 == num1 || containThree(num / 10);
     }
 
     private String isMultipleAndReturnResult(int num) {
         String result = "";
-        if (num % 3 == 0)
+        if (num % num1 == 0)
             result += "Fizz";
-        if (num % 5 == 0)
+        if (num % num2 == 0)
             result += "Buzz";
-        if (num % 7 == 0)
+        if (num % num3 == 0)
             result += "Whizz";
         return result;
     }
